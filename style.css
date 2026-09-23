@@ -27,6 +27,12 @@ header {
   align-items: center;
 }
 
+@media (max-width: 1000px) {
+  header {
+    flex-direction: column;
+  }
+}
+
 /* LOGO */
 
 .logo {
@@ -56,28 +62,19 @@ header {
 
 nav {
   background: #f7a0a4;
-
   padding: 14px 25px;
-
   border-radius: 15px;
-
   display: flex;
   gap: 10px;
-
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 nav a {
   text-decoration: none;
-
   color: #555;
-
   font-size: 12px;
-
   padding: 7px 16px;
-
   border-radius: 10px;
-
   transition: 0.3s;
 }
 
@@ -87,8 +84,16 @@ nav a:hover {
 
 nav .active {
   background: white;
-
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 14px;
+    gap: 5px;
+  }
 }
 
 .welcome {
@@ -133,7 +138,7 @@ nav .active {
 .hero-image {
   width: 72%;
   height: 380px;
-  border-radius: 180px;
+  border-radius: 100px;
   background: #ddd;
   display: flex;
   align-items: center;
@@ -147,7 +152,7 @@ nav .active {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 180px;
+  border-radius: 120px;
 }
 
 .carousel-button {
@@ -221,35 +226,15 @@ nav .active {
 /* Pinned reviews */
 
 .reviews {
-  width: 100%;
-  overflow: hidden;
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
   padding: 55px 10px 30px;
   scrollbar-width: none;
 }
 
 .reviews::-webkit-scrollbar {
   display: none;
-}
-
-.reviews-track {
-  display: flex;
-  width: max-content;
-  gap: 30px;
-  animation: reviewSlide 10s linear infinite;
-}
-
-.reviews-track:hover {
-  animation-play-state: paused;
-}
-
-@keyframes reviewSlide {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(calc(-50% - 15px));
-  }
 }
 
 .review-card {
@@ -522,3 +507,10 @@ footer {
 
   font-weight: 600;
 }
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+What should I add to thisford the above feature
